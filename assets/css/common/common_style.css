@@ -732,14 +732,22 @@ tr:nth-child(even) {
 .font-size-5p5{font-size: 4.5rem!important;}
 .font-size-6{font-size: 6rem!important;}
 /*media query font sizes*/
-/*screen sizes =< 320px, Iphone 4 etc.*/
-@media (max-width: 320px){
-  .font-size-xs-4{font-size: 1.5rem!important;}
-  .font-size-xs-4p5{font-size: 2rem!important;}
-}
 @media (max-width: 1200px){
   .font-size-xlg-4p5{font-size: 2rem!important;}
 }
+/*nedia query for smartphobe*/
+@media (max-width: 500px){
+  .font-size-sm-4{font-size: 1.5rem!important;}
+  .font-size-sm-4p5{font-size: 2rem!important;}
+}
+/*screen sizes =< 320px, Iphone 4 etc.*/
+@media (max-width: 320px){
+  .font-size-xs-3{font-size: 1rem!important;}
+  .font-size-xs-3p5{font-size: 1.25rem!important;}
+  .font-size-xs-4{font-size: 1.5rem!important;}
+  .font-size-xs-4p5{font-size: 2rem!important;}
+}
+
 /*Font Size ENDS*/
 
 /*Font Weight STARTS*/

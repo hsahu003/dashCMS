@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg5077"
+   version="1.1"
+   viewBox="0 0 5.3449998 5.3449998"
+   height="5.3449998mm"
+   width="5.3449998mm">
+  <defs
+     id="defs5071">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="-22.184307"
+       x2="-515.96283"
+       y1="-21.952772"
+       x1="-518.90381"
+       id="linearGradient5028"
+       xlink:href="#linearGradient5026"
+       gradientTransform="translate(367.66784,160.65846)" />
+    <linearGradient
+       id="linearGradient5026">
+      <stop
+         id="stop5022"
+         offset="0"
+         style="stop-color:#fdbb09;stop-opacity:0.99607843" />
+      <stop
+         id="stop5024"
+         offset="1"
+         style="stop-color:#ffd42a;stop-opacity:0.90980393" />
+    </linearGradient>
+  </defs>
+  <metadata
+     id="metadata5074">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-291.655)"
+     id="layer1">
+    <g
+       transform="translate(151.59512,156.0775)"
+       id="g5640">
+      <circle
+         r="2.6726949"
+         cy="138.25"
+         cx="-148.92262"
+         id="circle5007"
+         style="opacity:1;vector-effect:none;fill:url(#linearGradient5028);fill-opacity:1;stroke:none;stroke-width:0.39354524;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         id="path4996"
+         d="m -148.92272,138.15551 c 0.41088,0 0.74387,-0.333 0.74387,-0.74388 0,-0.41087 -0.33299,-0.74387 -0.74387,-0.74387 -0.41087,0 -0.74386,0.333 -0.74386,0.74387 0,0.41088 0.33299,0.74388 0.74386,0.74388 z m 0.52072,0.18596 h -0.097 c -0.12902,0.0593 -0.27256,0.093 -0.42367,0.093 -0.1511,0 -0.29406,-0.0337 -0.42366,-0.093 h -0.097 c -0.43121,0 -0.78106,0.34986 -0.78106,0.78107 v 0.24176 c 0,0.154 0.12495,0.27895 0.27895,0.27895 h 2.04565 c 0.154,0 0.27895,-0.12495 0.27895,-0.27895 v -0.24176 c 0,-0.43121 -0.34985,-0.78107 -0.78106,-0.78107 z"
+         style="fill:#666666;stroke-width:0.00581151" />
+    </g>
+  </g>
+</svg>

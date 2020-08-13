@@ -1,0 +1,10 @@
+/*add css which is specific to the project's dashboard only (other than common css)*/
+
+/*import css libraries*/
+@import url("../../lib/dash_slider/dash_slider.css");
+
+
+/*error container*/
+.error-display-container-add-admin{
+	width: 1200px;
+}

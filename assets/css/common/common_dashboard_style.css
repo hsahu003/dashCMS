@@ -1,0 +1,312 @@
+/*Variable STARTS*/
+:root {
+  --main-bg-color: #f0f2f5;
+}
+/*Variable ENDS*/
+
+/*Styling the body STARTS*/
+body{
+	background-color: gray;
+	display: block;
+    margin: 0px;
+    /*default font*/
+    font-family: 'Montserrat', sans-serif;
+}
+/*Styling the body 	ENDS*/
+
+/*Styling Common Elements STARTS*/
+
+.admin-background-color{
+  background: var(--main-bg-color);
+}
+.error-display-container{
+
+}
+
+.error-container {
+    height: 50px;
+    background: #ffffff;
+    width: 100%;
+    display: none;
+    align-items: center;
+    color: #5b5b5b;
+    font-weight: 500;
+}
+
+.error-container::before{
+    content: "";
+    padding: 0px 1px 0px 10px;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    background: #ffd243ff;
+    height: 100%;
+    border-radius: inherit;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: 10px;
+}
+/*Styling Common Elements ENDS*/
+
+/*Styling the header STARTS*/
+.navbar{ 
+	/*background-image: linear-gradient(#f99f1f, #f58225);*/
+	background-color: white;
+	padding: 5px;
+	top: 0;
+	overflow:hidden;
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+	z-index:100;
+	position:sticky !important;
+	width:100%;
+	box-sizing: border-box;
+	color: #030303;
+}
+
+.navbar_container{
+	/*width: 1200px;*/
+    /* background-color: green; */
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.admin_img{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background: #aaaaaa94;
+}
+
+.admin_img img {
+	width: 80%;
+	border-radius: 50%;
+}
+
+.dashborad-navigation-container{
+	width: 200px;
+    height: 100%;
+    background: #2c364c;
+    position: fixed;
+    /*this is equal to the computed height of .navbar*/
+    top: 60px;
+}
+
+
+.dashborad-navigation-container .module-name{
+	padding: 20px 15px;
+    background: #2c364c;
+    color: white;
+    font-size: 13px;
+}
+
+.dashborad-navigation-container :nth-child(odd) .module-name{
+	background: #35425e;
+}
+.dashborad-navigation-container :last-child .module-name{
+	border-bottom: 1px solid #ffffff26;
+}
+
+.module-expand-btn{
+	width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    /*background: #ffffff52;*/
+    transition: .2s;
+}
+
+.module-expand-btn  i{
+	font-size: .6em;
+}
+
+.feature-name-container{
+	max-height: 0px;
+	overflow-y: hidden;
+}
+
+.feature-name-container-open{
+	max-height: 1000px;
+	overflow-y: hidden;
+    animation-name: y-slider-open;
+    animation-duration: 1s;
+}
+
+.feature-name-container-close{
+	max-height: 0px;
+	animation-name: y-slider-close;
+    animation-duration: .3s;
+}
+@keyframes y-slider-open{
+  from {max-height: 0px;}
+  to {max-height: 1000px;}
+}
+
+@keyframes y-slider-close{
+  from {max-height: 1000px;}
+  to {max-height: 0px;}
+}
+
+
+.feature-name{
+	padding: 20px 30px;
+    background: #f9f9f9;
+    color: #2c364c;
+    font-size: 13px;
+    width: 100%;
+}
+.feature-name:nth-child(even){
+	background: #ececec;
+}
+
+
+
+.dashborad-working-area{
+	flex:1;
+	min-height: 100vh;
+	background: var(--main-bg-color);
+	/*keep it equal to .dashborad-navigation-container's width*/
+	margin-left: 200px;
+}
+
+.nested-dashboard-working-area{
+	width: 1200px;
+    height: auto;
+    background: #e4e6ea;
+}
+
+.dashboard-widget-container{
+	margin: 0 -10px;
+}
+
+.dashboard-widget{
+	 flex: 1;
+    min-height: 200px;
+    background: #ffffff;
+    /* margin-bottom: 10px; */
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: -1px 2px 9px -4px rgba(0, 0, 0, 0.13);
+}
+
+.dashboard-widget-controls{
+	width: 100%;
+	padding: 1rem;
+	display: block;
+	justify-content: flex-start;
+}
+
+.add-image-button{
+	width: 93px;
+	height: 93px;
+	background: #e2e2e2;
+	border-radius: 3px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: inline-flex;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+}
+
+.image-input, .common-image-input{
+	width: 0%;
+	visibility: hidden;
+}
+
+.image-input::before, .common-image-input::before{
+  content: 'Select some files';
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+.image-uploded{
+	display: none;
+}
+
+.remove-image-button, .common-remove-image-button{
+	width: 40px;
+    height: 40px;
+    background: #ffffffe8;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 3px 0px 3px 0px;
+    box-shadow: -1px 0px 20px 5px rgba(0, 0, 0, 0.47);
+}
+
+.remove-image-button img, .common-remove-image-button img{
+	width: 20px;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: unset;
+}
+
+/*.add-image-btn-label{
+    background-image: url(../images/admins/icons/add_icon.svg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: 50px 50px!important;
+}
+
+.ajax-processing-label{
+    background-image: url(../images/admins/icons/add_icon.svg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: 50px 50px!important;
+}*/
+
+.add-image-icon{
+	width: 37px;
+	filter: invert(100%) sepia(92%) saturate(0%) hue-rotate(3deg) brightness(112%) contrast(101%);
+}
+
+.add-image-icon-hidden{
+  visibility: hidden;
+}
+
+.processing-gif-hidden{
+  visibility: hidden;
+}
+
+.tags-added-container{
+	
+    /*background: blue;*/
+    align-items: center;
+}
+
+.tags-added{
+	min-width: 100px;
+    height: 40px;
+    background: #5989b3;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    align-items: center;
+    border-radius: 50px;
+    padding: 0 .75rem 0 1rem;
+
+}
+
+/*Styling the header ENDS*/
+
+/*Styling the dashboard login STARTS*/
+.dash-login-form{
+  width: 425px;
+  height: auto;
+  background: white;
+}
+/*Styling the dashboard login ENDS*/
+

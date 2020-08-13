@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg7664"
+   version="1.1"
+   viewBox="0 0 45.993999 7.5650001"
+   height="7.5650001mm"
+   width="45.993999mm">
+  <defs
+     id="defs7658" />
+  <metadata
+     id="metadata7661">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-289.435)"
+     id="layer1">
+    <g
+       transform="translate(49.455333,67.277023)"
+       id="g8228">
+      <text
+         id="text7039"
+         y="229.68236"
+         x="-49.505856"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:10.14059734px;line-height:3.16888618px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.1584443"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:10.14059734px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#f2f2f2;fill-opacity:1;stroke-width:0.1584443"
+           y="229.68236"
+           x="-49.505856"
+           id="tspan7037">Admins</tspan></text>
+      <rect
+         ry="0.64576012"
+         rx="0.64576012"
+         y="224.18742"
+         x="-8.8412428"
+         height="3.8393791"
+         width="5.3797293"
+         id="rect7041"
+         style="opacity:1;vector-effect:none;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.13902792;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text7045"
+         y="227.02501"
+         x="-7.7020216"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.62253785px;line-height:0.81954306px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.04097715"
+         xml:space="preserve"><tspan
+           style="fill:#ffffff;stroke-width:0.04097715"
+           y="227.02501"
+           x="-7.7020216"
+           id="tspan7043">1.0</tspan></text>
+    </g>
+  </g>
+</svg>

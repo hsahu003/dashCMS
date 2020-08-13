@@ -302,6 +302,11 @@ tr:nth-child(even) {
   width: 1000px !important;
   box-sizing: border-box;
 }
+
+.container-ctr-max-width-1200{
+  width: 1200px !important;
+  box-sizing: border-box;
+}
 .container{
   width: auto;
   box-sizing: border-box;
@@ -524,6 +529,8 @@ tr:nth-child(even) {
 }
 
 @media(max-width: 500px){
+  .width-sm-70{width: 70%!important;}
+  .width-sm-80{width: 80%!important;}
   .width-sm-90{width: 90%!important;}
   .width-sm-95{width: 95%!important;}
 
@@ -613,6 +620,10 @@ tr:nth-child(even) {
 .mb-child-4 > * {
   margin-bottom:  1.5rem!important;
 }
+.mb-child-5 > * {
+  margin-bottom:  3rem!important;
+}
+
 
 
 
@@ -714,6 +725,14 @@ tr:nth-child(even) {
 
 /*screen sizes <= 240px*/
 @media (max-width: 500px){
+  .p-sm-0{padding: 0px !important;}
+  .p-sm-1{padding: .25rem!important;}
+  .p-sm-2{padding: .5rem!important;}
+  .p-sm-3{padding: 1rem!important;}
+  .p-sm-4{padding: 1.5rem!important;}
+  .p-sm-5{padding: 3rem!important;}
+  .p-sm-6{padding: 6rem!important;}
+
   .py-sm-3{padding-top: 1rem !important; padding-bottom: 1rem !important;}
   .py-sm-4{padding-top: 1.5rem!important; padding-bottom: 1.5rem!important;}
   .py-sm-4p5{padding-top: 2rem !important; padding-bottom: 2rem !important;}
@@ -796,6 +815,7 @@ tr:nth-child(even) {
 .border-radius-2{border-radius: 5px!important;}
 .border-radius-3{border-radius: 10px!important;}
 .border-radius-4{border-radius: 15px!important;}
+.border-radius-50pc{border-radius: 50%!important;}
 
 .border-radius-top-1{border-radius: 3px 3px 0px 0px!important;}
 .border-radius-top-2{border-radius: 5px 5px 0px 0px!important;}
@@ -839,7 +859,7 @@ tr:nth-child(even) {
 *
 *
 */
-/*SHAPES*/
+/*SHAPES DEVIDERS STRATS*/
 .vertical-line-extra-thin{
     height: 2em;
     border-radius: 50px;
@@ -851,7 +871,14 @@ tr:nth-child(even) {
     height: 1px;
     background: #e6e6e6f2;;
 }
-/*SHAPES ENDS*/
+/*SHAPES DEVIDERS ENDS*/
+
+/*SHAPES CONTAINER STRATS*/
+.shape-container-round{
+    border-radius: 50%;
+}
+/*SHAPES CONTAINER ENDS*/
+
 
 /*EFFECTS*/
 .shadow-soft{
@@ -906,7 +933,7 @@ tr:nth-child(even) {
 /*screen size 1024px to 1200px | HD Computer*/
 @media (max-width: 1200px) {
   /*-------------------------LAYOUT STYLING STARTS-----------------------------*/
-  .container-ctr, .container-ctr-max-width-1000{
+  .container-ctr, .container-ctr-max-width-1000, .container-ctr-max-width-1200{
     width: 100% !important; 
   }
   .container{}
@@ -916,7 +943,7 @@ tr:nth-child(even) {
 /*screen size 768px to 1024px | Tablet Bigger*/
 @media (max-width: 1024px) {
   /*-------------------------LAYOUT STYLING STARTS-----------------------------*/
-  .container-ctr, .container-ctr-max-width-1000{
+  .container-ctr, .container-ctr-max-width-1000, .container-ctr-max-width-1200{
     width: 100% !important; 
   }
   .container{}
@@ -926,7 +953,7 @@ tr:nth-child(even) {
 /*screen size 500px to 768px | Tablet Smaller*/
 @media (max-width: 768px) {
   /*-------------------------LAYOUT STYLING STARTS-----------------------------*/
-  .container-ctr, .container-ctr-max-width-1000{
+  .container-ctr, .container-ctr-max-width-1000, .container-ctr-max-width-1200{
     width: 100% !important; 
   }
   .container{}
@@ -936,7 +963,7 @@ tr:nth-child(even) {
 /*screen size 240px to 500px | Smart Phone*/
 @media (max-width: 500px) {
   /*-------------------------LAYOUT STYLING STARTS-----------------------------*/
-  .container-ctr, .container-ctr-max-width-1000{
+  .container-ctr, .container-ctr-max-width-1000, .container-ctr-max-width-1200{
     width: 100% !important; 
   }
   /*-------------------------LAYOUT STYLING ENDS-----------------------------*/
@@ -945,7 +972,7 @@ tr:nth-child(even) {
 /*screen size < 240px | Smart Feature Phone*/
 @media (max-width: 240px) {
   /*-------------------------LAYOUT STYLING STARTS-----------------------------*/
-  .container-ctr, .container-ctr-max-width-1000{
+  .container-ctr, .container-ctr-max-width-1000, .container-ctr-max-width-1200{
     width: 100% !important; 
   }
   /*-------------------------LAYOUT STYLING ENDS-----------------------------*/

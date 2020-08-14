@@ -5,6 +5,7 @@ function slider(target,params)
     var cardsAtOnce =  params.cardsAtOnce || 1;
     var doSetInterval =  params.doSetInterval || false;
     var interval = params.interval || 3000;
+    var slideSpeed = params.slideSpeed || 9000;
     
     switch(window.innerWidth){
         //for xs devices
@@ -76,6 +77,7 @@ function slider(target,params)
         }
         console.log('slider_container_width: ' + get_slider_container_width());
         var slider_wrapper = slider_container.getElementsByClassName('slider-wrapper')[0];
+        var slider_scroll = slider_container.getElementsByClassName('slider-scroll')[0];
         var slider_slide = slider_wrapper.getElementsByClassName('slider-slide');
         var slide_count = 0;
 
@@ -123,7 +125,7 @@ function slider(target,params)
             slide(slide_count);
             //reverse slide if slide count is zero
             // if (true && slide_count == 0) {
-            //     slider_wrapper.style.transform = "translate3d(1200px)";
+            //     slider_scroll.style.transform = "translate3d(1200px)";
             //     console.log('its happening');
             // }
         }
@@ -178,12 +180,12 @@ function slider(target,params)
 
             //resets the slider when it reaches it's end point
             if (i == slide_number) {
-                slider_wrapper.style.transform = "translate3d(0px, 0px, 0px)";
+                slider_scroll.style.transform = "translate3d(0px, 0px, 0px)";
                 i = 0;
             }
 
 
-            slider_wrapper.style.transform = 'translate3d' + '(-' + get_slider_container_width() * i + 'px, 0px, 0px)';
+            slider_scroll.style.transform = 'translate3d' + '(-' + get_slider_container_width() * i + 'px, 0px, 0px)';
             slide_count = i;
             console.log('slider_container_width:' + get_slider_container_width());
 
@@ -201,6 +203,20 @@ function slider(target,params)
         if (doSetInterval == true) {
             var sliderInterval = setInterval(next_slide, interval);
         }
+
+        //slide speed
+        if (slideSpeed != null || slideSpeed != undefined) {
+            slider_scroll.style.transition = slideSpeed;
+        }
+
+        //remove contorls and pagination if the number of slide is only 1 - because theres noting to move
+        if (slide_number == 1) {
+            slider_next_btn.style.display = 'none';
+            slider_prev_btn.style.display = 'none';
+            slider_pagination.style.display = 'none';
+        }
+        
+
         //slide pauses if mouse hover over
         var x1 = false;
         var time = 0;

@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Commons extends CI_Controller {
 
@@ -7,9 +8,14 @@ class Commons extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('common/common_media');
 		$this->load->model('dashboard/settings/common_model', 'CModel');
+
+		// checks if admin is logged or redirects to login page
+		is_admin_logged_in();
 	}
 
 	function index(){
+
+
 		$this->load->view('dashboard/templates/header');
 		$this->load->view('dashboard/settings/index');
 		$this->load->view('dashboard/templates/footer');

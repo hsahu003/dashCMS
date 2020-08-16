@@ -1,4 +1,6 @@
-<?php 
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Login extends CI_Controller {
 
 	public function __construct()
@@ -7,19 +9,23 @@ class Login extends CI_Controller {
 		$this->load->helper('common/common_media');
 		$this->load->helper('form');
 		$this->load->model('dashboard/settings/admin_model', 'AModel');
+
 	}
 
 	public function index(){
 		
-		// redirect('/dashboard');	
-		// if($this->input->method() == 'get')
-		// {
-		// 	if($this->session->logged_in){
-		// 		redirect('dashboard');
-		// 	}
-		// }
-		// else
-		// {
+		if($this->input->method() == 'get')
+		{
+			if($this->session->logged_in){
+				redirect('dashboard');
+			}
+			else
+			{
+				$this->load->view('dashboard/login');
+			}
+		}
+		else
+		{
 			$this->load->library('form_validation');
 
 			// Validations
@@ -36,30 +42,38 @@ class Login extends CI_Controller {
 			// Validation Ok
 			else
 			{	
-				$user = $this->AModel->get_admin($this->input->post('username'));
-				if(password_verify('Wonderheis1', '$2y$10$W7YphenzwOFldCpYI.2Yr.Jbg')){
-						echo "match";
+				$admin = $this->AModel->get_admin($this->input->post('username'));
+				if(password_verify($this->input->post('password'), $admin['password'])){
+					$adminData = array(
+					'admin_id' => $admin['ID'],
+					'firstName' => $admin['firstName'],
+					'lastName' => $admin['lastName'],
+					'email' => $admin['email'],
+					'mobile' => $admin['mobile'],
+					'role' => $admin['role'],
+					'superAdmin' => $admin['superAdmin'],
+					'status' => $admin['status'],
+					'admin_logged_in' => true,
+						);
+					$this->session->set_userdata($adminData);
+					redirect('dashboard');
 				}else{
-					echo "doesnt match";
+					
 				}
-				echo $this->input->post('password') . " ".$user['password'];
-				// if(password_verify($this->input->post('password'), $user['password'])){
-				// 	$userdata = array(
-				// 		'user_id' => $user['ID'],
-				// 		'firstName' => $user['firstName'],
-				// 		'lastName' => $user['lastName'],
-				// 		'email' => $user['email'],
-				// 		'mobile' => $user['mobile'],
-				// 		'superAdmin' => $user['superAdmin'],
-				// 		'status' => '1',
-				// 		'logged_in' => true,
-				// 	);
-				// 	redirect('/dashboard');
-				// }
 
 			}
-		// }
+		}
 		
+	}
+
+	public function logout()
+	{
+		if($this->session->admin_logged_in){
+			$usersession = array('admin_id','firstName','lastName','email','mobile','role','superAdmin','status','admin_logged_in');
+			$this->session->unset_userdata($usersession);
+			$this->session->set_flashdata(['execute' => 'success','message' => 'Successfully Logged Out.']);
+		}
+		redirect('dashboard');
 	}
 
 }

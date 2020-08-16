@@ -1,4 +1,6 @@
 <?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 // Displays logo
 function display_logo($color = '', $size = '', $logoLink = '' ) {
 	//default argument for this function

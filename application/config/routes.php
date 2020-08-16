@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //dashboard URI
 $route['dashboard/login'] = 'dashboard/login/index';
+$route['dashboard/logout'] = 'dashboard/login/logout';
 $route['dashboard'] = 'dashboard/home/index';
 
 // 

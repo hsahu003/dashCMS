@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html>
 <head>
 	<title><?= isset($title)?$title:$GLOBALS['dashboard_default_title']?></title>
@@ -32,7 +34,10 @@
 						Dash User
 					</div>
 					<div class="col btn-rect-rounded border-none mr-2">
-						Logout
+						<a href="<?= site_url('dashboard/logout');?>">
+							Logout
+						</a>
+						
 					</div>
 					<div class="col btn-rect-rounded border-none mr-2">
 						My Account

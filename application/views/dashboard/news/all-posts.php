@@ -1,4 +1,6 @@
-<!--Continuing from views/dashboard/templated/header.php-->
+<?php 	
+defined('BASEPATH') OR exit('No direct script access allowed');
+ ?><!--Continuing from views/dashboard/templated/header.php-->
 	<div class="container dashborad-working-area">
 		<div class="container m-4 p-4 border-radius-2 nested-dashboard-working-area">
 			<div class="container">

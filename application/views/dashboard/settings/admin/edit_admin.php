@@ -1,4 +1,6 @@
-<!--Continuing from views/dashboard/templated/header.php-->
+<?php 	
+defined('BASEPATH') OR exit('No direct script access allowed');
+ ?><!--Continuing from views/dashboard/templated/header.php-->
 <div class="text">
 	
 </div>

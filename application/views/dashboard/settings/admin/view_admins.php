@@ -1,4 +1,6 @@
-<!--Continuing from views/dashboard/templated/header.php-->
+<?php 	
+defined('BASEPATH') OR exit('No direct script access allowed');
+ ?><!--Continuing from views/dashboard/templated/header.php-->
 <div class="text">
 	
 </div>
@@ -47,9 +49,9 @@
 										<div class="col">
 											<select onchange="sort_admins(this)">
 												<option value="">Sort Admins</option>
-												<option value="all">All Admins</option>
-												<option value="status/0">Disabled Admins</option>
-												<option value="status/1">Active Admins</option>
+												<option value="all">All</option>
+												<option value="status/0">Disabled</option>
+												<option value="status/1">Active</option>
 												<option value="superadmin/1">Super Admins</option>
 											</select>
 										</div>

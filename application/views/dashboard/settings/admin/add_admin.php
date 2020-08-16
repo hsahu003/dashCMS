@@ -1,6 +1,8 @@
 <!--Continuing from views/dashboard/templated/header.php-->
 <div class="text">
-	
+<?php 	
+defined('BASEPATH') OR exit('No direct script access allowed');
+ ?>	
 </div>
 		<div class="container dashborad-working-area">
 			<?php if(isset($execute)):?>
@@ -69,10 +71,10 @@
 											<div class="form-element flex-col">
 												<label>Role</label>
 												<select class="p-3" name="role">
-													<option value="editor">Editor (can add and edit, cannot: delete, manage admins, edit the settings)</option>
+													<option value="editor">Editor (can add and edit content, cannot: delete, manage admins, cannot edit the settings)</option>
 													<option value="visitor">Viewer (can view only)</option>
 													<option value="moderator">Moderator (can add, edit and delete, cannot: manage admins)</option>
-													<option value="admin">Admin (cannot delete primary admin account)</option>
+													<option value="admin">Admin (cannot disable super admin account)</option>
 												</select>
 											</div>
 

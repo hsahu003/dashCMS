@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 //converts the separated by commas string into array
 function if_str_thn_arr($data)

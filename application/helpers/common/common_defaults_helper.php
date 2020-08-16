@@ -1,4 +1,5 @@
 <?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
 //array of $global variables
 $GLOBALS['dashboard_ver'] = 'Admins 1.0';
 $GLOBALS['site_name'] = 'CI-Template';

@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*this is the script that needs to run on regular basis
  this helper is added to autoload

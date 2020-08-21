@@ -62,9 +62,9 @@ $route['dashboard'] = 'dashboard/home/index';
 // 
 
 //Dashboard -> Setting
-$route['dashboard/settings'] = 'dashboard/settings/commons/index';
-$route['ajax/add-image'] = 'dashboard/settings/commons/ajax_add_image';
-$route['ajax/remove-image'] = 'dashboard/settings/commons/ajax_remove_image';
+$route['dashboard/settings'] = 'dashboard/settings/common/index';
+$route['ajax/add-image'] = 'dashboard/settings/common/ajax_add_image';
+$route['ajax/remove-image'] = 'dashboard/settings/common/ajax_remove_image';
 
 //Dashboard -> Setting -> Admin URI -> View
 $route['dashboard/settings/admin/view/(:any)/(:any)'] = 'dashboard/settings/admin/view_admins/$1/$2';

@@ -45,13 +45,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div>
 				<div class="row">
 					<div class="col flex ml-3">
-						<?= display_icon('notification_icon_black',true,'20px','')?>
+						<?= display_icon('notification_icon_black','','20px','')?>
 					</div>
 					<div class="col flex ml-3">
-						<?= display_icon('home_icon_black',true,'20px',base_url())?>
+						<?= display_icon('home_icon_black','','20px',base_url())?>
 					</div>
 					<div class="col flex ml-3">
-						<?= display_icon('setting_icon_black',true,'20px',site_url('dashboard/settings'))?>
+						<?= display_icon('setting_icon_black','','20px',site_url('dashboard/settings'))?>
 					</div>
 				</div>
 			</div>

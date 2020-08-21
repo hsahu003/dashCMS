@@ -50,15 +50,16 @@ function display_img($image,$sub_folder='',$withNoImgTag=false,$size='',$link=''
 	}
 }
 
-function display_icon($icon,$admins_folder=false,$size='100%',$link=''){
+/*leave $admins_folder '' if image is not there while implementing this function*/
+function display_icon($icon,$admins_folder='',$size='100%',$link=''){
 	if (substr($icon, -4,4) == '.svg') {
 		$icon = str_replace(".svg","",$icon);
 	}
 
-	if ($admins_folder==true) {
-		$admins_folder = '/' . $GLOBALS['dashboard_image_folder'];
+	if ($admins_folder!='') {
+		$admins_folder = '/' . $admins_folder;
 	}else{
-		$admins_folder = '';
+		$admins_folder = '/' . $GLOBALS['dashboard_image_folder'];
 	}
 
 	$icon_path = site_url('assets/images'. $admins_folder .'/icons/' . $icon . '.svg');

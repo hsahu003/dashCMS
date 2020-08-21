@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<input class="mb-2 p-3 font-size-3" id="password" type="password" name="password" value="">
 									</div>	
 								</div>
-								<div class="col width-100 unselectable">
+								<!-- <div class="col width-100 unselectable">
 									<div class="row space-between"> 	
 										<div class="col flex">	
 											<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<small class="font-size-2p5 ml-1 f-gray-60">Forgot Password?</small>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="col width-100 mt-4">
 									<div class="form-element">
 										<input class="btn-rect-rounded py-3 px-5 width-100 f-white gray-70" type="submit" name="submit" value="Login">

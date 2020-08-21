@@ -39,11 +39,12 @@ class Login extends CI_Controller {
 				$data = array('execute' => 'failure','message' => $errors[0]);
 				$this->load->view('dashboard/login',$data);
 			}
-			// Validation Ok
 			else
 			{	
+
+				// Check user credential
 				$admin = $this->AModel->get_admin($this->input->post('username'));
-				if(password_verify($this->input->post('password'), $admin['password'])){
+				if(isset($admin) && password_verify($this->input->post('password'), $admin['password'])){
 					$adminData = array(
 					'admin_id' => $admin['ID'],
 					'firstName' => $admin['firstName'],
@@ -58,7 +59,10 @@ class Login extends CI_Controller {
 					$this->session->set_userdata($adminData);
 					redirect('dashboard');
 				}else{
-					
+
+					// Mismatch user credential
+					$data = array('execute' => 'failure','message' => 'email/username and password did not match');
+					$this->load->view('dashboard/login',$data);
 				}
 
 			}

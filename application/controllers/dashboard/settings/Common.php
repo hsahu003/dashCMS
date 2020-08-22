@@ -47,11 +47,12 @@ class Common extends CI_Controller {
 				//updating the media database with image
 				$time = date("Y-m-d H:i:s");
 				$image_data = array(
-					'name' => $data['file_name'],
-					'type' => $data['file_type'],
-					'path' => '/assets/images/uploads/' . $data['file_name'],
-					'dateUploaded' => $time,
-					'authorID' => '1'//$this->session->user_id
+					'media_name' => $data['file_name'],
+					'media_type' => $data['file_type'],
+					'media_path' => '/assets/images/uploads/' . $data['file_name'],
+					'date_created' => $time,
+					'user_created_id' => '1',//$this->session->user_id
+					'user_type' => 'admin'//$this->session->user_type (if needed)
 				);
 				$image_id = $this->CModel->add_image($image_data);
 

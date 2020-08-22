@@ -6,13 +6,13 @@
 
 /*Styling the body STARTS*/
 body{
-	background-color: gray;
-	display: block;
+  background-color: gray;
+  display: block;
     margin: 0px;
     /*default font*/
     font-family: 'Montserrat', sans-serif;
 }
-/*Styling the body 	ENDS*/
+/*Styling the body  ENDS*/
 
 /*Styling Common Elements STARTS*/
 
@@ -50,21 +50,21 @@ body{
 
 /*Styling the header STARTS*/
 .navbar{ 
-	/*background-image: linear-gradient(#f99f1f, #f58225);*/
-	background-color: white;
-	padding: 5px;
-	top: 0;
-	overflow:hidden;
-	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-	z-index:100;
-	position:sticky !important;
-	width:100%;
-	box-sizing: border-box;
-	color: #030303;
+  /*background-image: linear-gradient(#f99f1f, #f58225);*/
+  background-color: white;
+  padding: 5px;
+  top: 0;
+  overflow:hidden;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  z-index:100;
+  position:sticky !important;
+  width:100%;
+  box-sizing: border-box;
+  color: #030303;
 }
 
 .navbar_container{
-	/*width: 1200px;*/
+  /*width: 1200px;*/
     /* background-color: green; */
     padding: 5px;
     margin: auto;
@@ -73,19 +73,19 @@ body{
 }
 
 .admin_img{
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	background: #aaaaaa94;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #aaaaaa94;
 }
 
 .admin_img img {
-	width: 80%;
-	border-radius: 50%;
+  width: 80%;
+  border-radius: 50%;
 }
 
 .dashborad-navigation-container{
-	width: 200px;
+    min-width: 200px;
     height: 100%;
     background: #2c364c;
     position: fixed;
@@ -95,21 +95,21 @@ body{
 
 
 .dashborad-navigation-container .module-name{
-	padding: 20px 15px;
+  padding: 20px 15px;
     background: #2c364c;
     color: white;
     font-size: 13px;
 }
 
 .dashborad-navigation-container :nth-child(odd) .module-name{
-	background: #35425e;
+  background: #35425e;
 }
 .dashborad-navigation-container :last-child .module-name{
-	border-bottom: 1px solid #ffffff26;
+  border-bottom: 1px solid #ffffff26;
 }
 
 .module-expand-btn{
-	width: 15px;
+  width: 15px;
     height: 15px;
     border-radius: 2px;
     /*background: #ffffff52;*/
@@ -117,24 +117,24 @@ body{
 }
 
 .module-expand-btn  i{
-	font-size: .6em;
+  font-size: .6em;
 }
 
 .feature-name-container{
-	max-height: 0px;
-	overflow-y: hidden;
+  max-height: 0px;
+  overflow-y: hidden;
 }
 
 .feature-name-container-open{
-	max-height: 1000px;
-	overflow-y: hidden;
+  max-height: 1000px;
+  overflow-y: hidden;
     animation-name: y-slider-open;
     animation-duration: 1s;
 }
 
 .feature-name-container-close{
-	max-height: 0px;
-	animation-name: y-slider-close;
+  max-height: 0px;
+  animation-name: y-slider-close;
     animation-duration: .3s;
 }
 @keyframes y-slider-open{
@@ -149,38 +149,38 @@ body{
 
 
 .feature-name{
-	padding: 20px 30px;
+  padding: 20px 30px;
     background: #f9f9f9;
     color: #2c364c;
     font-size: 13px;
     width: 100%;
 }
 .feature-name:nth-child(even){
-	background: #ececec;
+  background: #ececec;
 }
 
 
 
 .dashborad-working-area{
-	flex:1;
-	min-height: 100vh;
-	background: var(--main-bg-color);
-	/*keep it equal to .dashborad-navigation-container's width*/
-	margin-left: 200px;
+  flex:1;
+  min-height: 100vh;
+  background: var(--main-bg-color);
+  /*keep it equal to .dashborad-navigation-container's width*/
+  margin-left: 200px;
 }
 
 .nested-dashboard-working-area{
-	width: 1200px;
+  width: 1200px;
     height: auto;
     background: #e4e6ea;
 }
 
 .dashboard-widget-container{
-	margin: 0 -10px;
+  margin: 0 -10px;
 }
 
 .dashboard-widget{
-	 flex: 1;
+   flex: 1;
     min-height: 200px;
     background: #ffffff;
     /* margin-bottom: 10px; */
@@ -190,28 +190,28 @@ body{
 }
 
 .dashboard-widget-controls{
-	width: 100%;
-	padding: 1rem;
-	display: block;
-	justify-content: flex-start;
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  justify-content: flex-start;
 }
 
 .add-image-button{
-	width: 93px;
-	height: 93px;
-	background: #e2e2e2;
-	border-radius: 3px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	display: inline-flex;
-	vertical-align: middle;
-	position: relative;
-	overflow: hidden;
+  width: 93px;
+  height: 93px;
+  background: #e2e2e2;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
 }
 
 .image-input, .common-image-input{
-	width: 0%;
-	visibility: hidden;
+  width: 0%;
+  visibility: hidden;
 }
 
 .image-input::before, .common-image-input::before{
@@ -231,11 +231,11 @@ body{
 }
 
 .image-uploded{
-	display: none;
+  display: none;
 }
 
 .remove-image-button, .common-remove-image-button{
-	width: 40px;
+  width: 40px;
     height: 40px;
     background: #ffffffe8;
     position: absolute;
@@ -246,7 +246,7 @@ body{
 }
 
 .remove-image-button img, .common-remove-image-button img{
-	width: 20px;
+  width: 20px;
   transform: rotateZ(45deg);
   cursor: pointer;
   padding: 5px;
@@ -268,8 +268,8 @@ body{
 }*/
 
 .add-image-icon{
-	width: 37px;
-	filter: invert(100%) sepia(92%) saturate(0%) hue-rotate(3deg) brightness(112%) contrast(101%);
+  width: 37px;
+  filter: invert(100%) sepia(92%) saturate(0%) hue-rotate(3deg) brightness(112%) contrast(101%);
 }
 
 .add-image-icon-hidden{
@@ -281,13 +281,13 @@ body{
 }
 
 .tags-added-container{
-	
+  
     /*background: blue;*/
     align-items: center;
 }
 
 .tags-added{
-	min-width: 100px;
+  min-width: 100px;
     height: 40px;
     background: #5989b3;
     color: white;
@@ -309,4 +309,3 @@ body{
   background: white;
 }
 /*Styling the dashboard login ENDS*/
-

@@ -13,6 +13,7 @@
 
 /*import other common css*/
 @import url('common_variable_theme.css');
+@import url('common_grid.css');
 
 /*Dynamic styles STARTS | changes according to website*/
 /*Color Scheme STARTS*/
@@ -377,6 +378,8 @@ tr:nth-child(even) {
 }
 
 
+
+
 /*media queruies for cols*/
 @media(max-width: 1200px){
   .row-cols-xlg-4 > * {
@@ -492,6 +495,20 @@ tr:nth-child(even) {
   margin-right: 10px;
   font-size: 12px;
 }
+
+.mandatory::after{
+  content: '*';
+  margin-left: 5px;
+  font-size: 1rem;
+  color: red;
+}
+
+.optional::after{
+  content: '(optional)';
+  color: gray;
+  margin-left: 5px;
+}
+
 /*Forms END*/
 
 /*

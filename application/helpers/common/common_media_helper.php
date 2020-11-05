@@ -58,8 +58,6 @@ function display_icon($icon,$admins_folder='',$size='100%',$link=''){
 
 	if ($admins_folder!='') {
 		$admins_folder = '/' . $admins_folder;
-	}else{
-		$admins_folder = '/' . $GLOBALS['dashboard_image_folder'];
 	}
 
 	$icon_path = site_url('assets/images'. $admins_folder .'/icons/' . $icon . '.svg');

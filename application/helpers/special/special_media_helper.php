@@ -17,7 +17,3 @@ function product_img_url($image,$size='',$link=Null){
 		echo '<img style="width:'. $size .';" src="'. $product_img_url .'">';
 	}
 }
-
-
-
- ?>

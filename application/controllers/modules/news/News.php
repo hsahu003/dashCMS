@@ -7,6 +7,9 @@ class News extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('style');
+
+		//check for admin login session
+		is_admin_logged_in();
 	}
 
 	function index(){
@@ -29,5 +32,3 @@ class News extends CI_Controller {
 
 	
 }
-
- ?>

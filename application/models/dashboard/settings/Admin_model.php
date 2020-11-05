@@ -5,6 +5,7 @@ class Admin_model extends CI_Model {
 	public function __construct()
         {
         	$this->load->database();
+            $this->load->model('dashboard/settings/common_model', 'CModel');
         }
      
      
@@ -45,7 +46,8 @@ class Admin_model extends CI_Model {
 
                 foreach ($metaKeys as $key => $metaKey)
                 {
-                    $admin->{$metaKey} = $this->get_user_meta($admin->ID,$metaKey,true);
+                    $media_id = $this->get_admin_meta($admin->ID,$metaKey,true);
+                    $admin->{$metaKey} = $this->CModel->get_row('media','media_path',$media_id);
                 }
             }
         }
@@ -55,7 +57,7 @@ class Admin_model extends CI_Model {
 
 
 
-    public function get_user_meta($adminID,$metaKey,$onlyValue=false){
+    public function get_admin_meta($adminID,$metaKey,$onlyValue=false){
         $this->db->select('metaKey,metaValue');
         $this->db->from('adminmeta');
         $this->db->where('adminID',$adminID);
@@ -82,14 +84,45 @@ class Admin_model extends CI_Model {
         }
     }
 
-    public function get_admin($username){
+    /**
+    * 
+    * @param $username | either username or userid or email
+    * @param $attributes | array or string | attributes name either in array or comman separated string
+    * @param $filter_keys_and_values | array | to select rows with condition, where value matches the 
+    *   key(column)
+    * @return one user's complete detail in object array
+    */
+    public function get_admin($username,$metaKeys=null,$filter_keys_and_values=null){
 
             $this->db->where('email',$username);
             $this->db->or_where('username',$username);
             //get user by primary ID
             $this->db->or_where('ID',$username);
+            if ($filter_keys_and_values!=null) 
+            {
+                foreach ($filter_keys_and_values as $key => $value) 
+                {
+                    $this->db->where($key,$value);
+                }
+            }
     		$query = $this->db->get('admin');
-    		return $query->row_array();
+    		$admin =  $query->row_array();
+
+            if (is_string($metaKeys))
+            {
+                $metaKeys = explode(',', $metaKeys);
+            }
+
+            if ($metaKeys != null)
+            {
+                foreach ($metaKeys as $key => $metaKey)
+                {
+                    $media_id = $this->get_admin_meta($admin['ID'],$metaKey,true);
+                    $admin[$metaKey] = $this->CModel->get_row('media','media_path',$media_id);
+                }
+            }
+
+            return $admin;
     }
 
     //remove admin

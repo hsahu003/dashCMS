@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 		
 		if($this->input->method() == 'get')
 		{
-			if($this->session->logged_in){
+			if($this->session->admin_logged_in){
 				redirect('dashboard');
 			}
 			else
@@ -45,19 +45,26 @@ class Login extends CI_Controller {
 				// Check user credential
 				$admin = $this->AModel->get_admin($this->input->post('username'));
 				if(isset($admin) && password_verify($this->input->post('password'), $admin['password'])){
-					$adminData = array(
-					'admin_id' => $admin['ID'],
-					'firstName' => $admin['firstName'],
-					'lastName' => $admin['lastName'],
-					'email' => $admin['email'],
-					'mobile' => $admin['mobile'],
-					'role' => $admin['role'],
-					'superAdmin' => $admin['superAdmin'],
-					'status' => $admin['status'],
-					'admin_logged_in' => true,
-						);
-					$this->session->set_userdata($adminData);
-					redirect('dashboard');
+					//if admin is not active
+					if ($admin['status'] != 1) {
+						// Disabled Admin
+						$data = array('execute' => 'failure','message' => $admin['firstName'].' is disabled');
+						$this->load->view('dashboard/login',$data);
+					}else{
+						$adminData = array(
+						'admin_id' => $admin['ID'],
+						'firstName' => $admin['firstName'],
+						'lastName' => $admin['lastName'],
+						'email' => $admin['email'],
+						'mobile' => $admin['mobile'],
+						'role' => $admin['role'],
+						'superAdmin' => $admin['superAdmin'],
+						'status' => $admin['status'],
+						'admin_logged_in' => true,
+							);
+						$this->session->set_userdata($adminData);
+						redirect('dashboard');
+					}
 				}else{
 
 					// Mismatch user credential
@@ -81,6 +88,3 @@ class Login extends CI_Controller {
 	}
 
 }
-
-
- ?>

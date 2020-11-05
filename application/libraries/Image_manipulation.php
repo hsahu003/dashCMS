@@ -42,8 +42,8 @@ class Image_manipulation {
                         $this->new_image_full_path =  $this->params['new_image'];
                         $this->new_image_name = basename($this->new_image_full_path);
                 }else{
-                        $this->new_image_full_path =  $this->source_image_path . $this->source_image_name_wo_ext . '_thumb.jpg';
-                        $this->new_image_name = basename($this->new_image_full_path) . '_thumb.jpg';
+                        $this->new_image_full_path =  $this->source_image_path . $this->source_image_name_wo_ext . '_thumb.' . $this->source_image_ext;
+                        $this->new_image_name = basename($this->new_image_full_path) . '_thumb.' . $this->source_image_ext;
                 }
 
                 //source image's width and height
@@ -64,20 +64,58 @@ class Image_manipulation {
 
 		$this->new_image = '';
 		$this->path = $this->new_image_full_path;
+                $this->tmp_image = imagecreatetruecolor($this->new_image_width, $this->new_image_height);
 
 		switch ($this->source_image_ext) {
 		        case "png":
-		              $this->new_image = imagecreatefrompng($this->source_image_full_path);
+                $mime = mime_content_type($this->source_image_full_path);
+		              if ($mime == 'image/png') {
+                            imagealphablending($this->tmp_image, false);
+                            imagesavealpha($this->tmp_image,true);
+                            $transparent = imagecolorallocatealpha($this->tmp_image, 255, 255, 255, 127);
+                            imagefilledrectangle($this->tmp_image, 0, 0, $this->new_image_width, $this->new_image_height, $transparent);
+                            $this->new_image = imagecreatefrompng($this->source_image_full_path);
+                      }
+                      //for png file with mime image/jpeg
+                      else{
+                        $this->new_image = imagecreatefromjpeg($this->source_image_full_path);
+                      };
+                              
 		              break;
 			case "jpg":
 			case "jpeg":
+            case 'jfif':
 			      $this->new_image = imagecreatefromjpeg($this->source_image_full_path);
 			      break;
+            case 'gif':
+                  $this->new_image = imagecreatefromgif($this->source_image_full_path);
+                  break;
+            case 'webp':
+                  $this->new_image = imagecreatefromwebp($this->source_image_full_path);
+                  break;
 			}
 
-		$this->tmp_image = imagecreatetruecolor($this->new_image_width, $this->new_image_height);
+		
 		imagecopyresampled($this->tmp_image, $this->new_image, 0, 0, 0, 0, $this->new_image_width, $this->new_image_height, $this->source_image_width, $this->source_image_height);
-		imagejpeg($this->tmp_image, $this->path, 100);
+
+                switch ($this->source_image_ext) 
+                {
+                case "png":
+                    imagepng($this->tmp_image, $this->path, 9);
+                    break;
+                case "jpg":
+                case "jpeg":
+                case 'jfif':
+                    imagejpeg($this->tmp_image, $this->path, 100);
+                    break;
+                case "gif":
+                    imagegif($this->tmp_image, $this->path, 100);
+                    break;
+                case "webp":
+                imagewebp($this->tmp_image, $this->path, 100);
+                break;
+                }
+                
 		imagedestroy($this->new_image);
 		imagedestroy($this->tmp_image);
 
@@ -107,5 +145,3 @@ class Image_manipulation {
                 $this->params  = [];
         }
 }
-
-?>

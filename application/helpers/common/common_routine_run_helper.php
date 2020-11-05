@@ -24,6 +24,3 @@ if(!is_dir($directoryName)){
     //Directory does not exist, so lets create it.
     mkdir($directoryName, 0777, true);
 }
-
-?>
- 

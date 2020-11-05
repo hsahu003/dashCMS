@@ -18,9 +18,9 @@ class Admin extends CI_Controller {
 
 			//get admins from user table
 			if ($filterKey == 'all') {
-				$data['users'] = $this->AModel->get_all_admin('user_image');
+				$data['users'] = $this->AModel->get_all_admin('user_image_id');
 			}else{
-				$data['users'] = $this->AModel->get_all_admin('user_image',$filterKey,$filterValue);
+				$data['users'] = $this->AModel->get_all_admin('user_image_id',$filterKey,$filterValue);
 			}
 			
 			$data['total_user'] = count($data['users']);
@@ -91,18 +91,15 @@ class Admin extends CI_Controller {
 						'dateCreated' => $time,
 					);
 
-					echo $user['password'];
-					exit();
-
 					//inserts array into user table and returns the newly created user id
 					$userID = $this->AModel->insert_admin($user);
 
-					if ($this->input->post('user_image') != '') {
+					if ($this->input->post('image_id') != '') {
 						$userMeta = array(
-						'userID' => $userID,
+						'adminID' => $userID,
 						//refer trello for user metaKey list
-						'metaKey' => 'user_image',
-						'metaValue' => $this->input->post('user_image')
+						'metaKey' => 'user_image_id',
+						'metaValue' => $this->input->post('image_id')
 						);
 
 						$this->AModel->insert_admin_meta($userMeta);
@@ -178,7 +175,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('form');
 
 		//get user
-		$admin = $this->AModel->get_admin($adminID);
+		$admin = $this->AModel->get_admin($adminID,'user_image_id');
 		$data['admin'] = $admin;
 
 		switch ($admin['role']) {
@@ -240,5 +237,3 @@ class Admin extends CI_Controller {
 	
 
 }
-
-?>

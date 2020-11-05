@@ -17,9 +17,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					Edit Admin
 					<?php print_r($admin['firstName']) ; ?>
 				</div>
+				<?php var_dump($admin) ?>
 				<div class="row flex-col dashboard-widget-container">
 					<div class="row flex width-100 space-between align-items-y-start">
-						<?=form_open('dashboard/settings/admin/edit',array('class' => 'width-100 flex align-items-y-start'),array('user_image' => 0))?>
+						<?=form_open('dashboard/settings/admin/edit',array('class' => 'width-100 flex align-items-y-start'),array('image_id' => 0))?>
 						<div style="flex: 1.5" class="col space-between dashboard-widget shadow-none">
 							<div class="border-radius-top-2 p-3 width-100 border-b">
 								Admin Details
@@ -102,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								Admin Image
 							</div>
 							<div class="dashboard-widget-controls pb-4">
-								<?= add_image_btn(false,'user_image');?> 
+								<?= add_image_btn(false);?> 
 							</div>
 						</div>
 						</form>

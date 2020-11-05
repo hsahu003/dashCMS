@@ -27,9 +27,10 @@ class Common extends CI_Controller {
 
 		//upload file
         $config['upload_path'] = './assets/images/uploads';
-        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif|jfif|webp';
 
-
+        $folder_id = $_POST['folder_id'];
+        $admin_id = $_POST['admin_id'];
 
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('file')) {
@@ -38,7 +39,7 @@ class Common extends CI_Controller {
        			//creating thumbnail for the image
                 $data = $this->upload->data();
          		$hello['source_image'] = $data['full_path'];
-         		$hello['new_image'] = $data['file_path'] . $data['raw_name'] . '_thumb.jpg';
+         		$hello['new_image'] = $data['file_path'] . $data['raw_name'] . '_thumb' .$data['file_ext'];
 				$this->load->library('image_manipulation',$hello);
 				$this->image_manipulation->thumb();
 				
@@ -51,16 +52,24 @@ class Common extends CI_Controller {
 					'media_type' => $data['file_type'],
 					'media_path' => '/assets/images/uploads/' . $data['file_name'],
 					'date_created' => $time,
-					'user_created_id' => '1',//$this->session->user_id
+					'user_created_id' => $admin_id,//$this->session->user_id
 					'user_type' => 'admin'//$this->session->user_type (if needed)
 				);
-				$image_id = $this->CModel->add_image($image_data);
+				$image_id = $this->CModel->add_into_table('media',$image_data);
 
+				//adding the folder id into media_taxonomy_map
+				$folder_data = array(
+					'media_id' => $image_id,
+					'media_taxonomy_id' => $folder_id
+				);
+
+				$this->CModel->add_into_table('media_taxonomy_map',$folder_data);
 				//sending the processed data
 				$array = array(
-						'image' =>  site_url('/assets/images/uploads/') .  $data['file_name'],
-						'image_path' => '/assets/images/uploads/' . $data['file_name'],
-						'image_id' => $image_id
+						'media_id' => $image_id,
+						'media_name' => $data['file_name'],
+						'media_path' => '/assets/images/uploads/' . $data['file_name']
+
 				);
 				$json = json_encode($array);
 				echo $json;
@@ -73,5 +82,3 @@ class Common extends CI_Controller {
 	}
 
 }
-
-?>

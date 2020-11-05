@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<tr>
 														<td><input type="checkbox" name="select" class="admin-selected" data-UID="<?= $user->ID ?>"></td>	
 														<td><?= $index ?></td>
-														<td><img src="<?= null !== $user->user_image ? base_url($user->user_image) : display_img('user_icon.svg','icons') ?>"><?= $user->firstName?></td>
+														<td><img src="<?= null !== $user->user_image_id ? base_url($user->user_image_id) : display_img('user_icon.svg','icons') ?>"><?= $user->firstName?></td>
 														<td><?= $user->username ?></td>
 														<td><?= $user->email ?></td>
 														<td><?= $user->role ?></td>

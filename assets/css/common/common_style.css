@@ -33,6 +33,13 @@
   background: transparent!important;
 }
 
+.bg-gray-80{background: #333333!important;}
+.bg-gray-70{background: #4d4d4d!important;}
+.bg-gray-60{background: #666666fe!important;}
+.bg-gray-6{background: #f1f1f1!important;}
+.bg-gray-5{background: #f2f2f2!important;}
+.bg-blue-primary{background: #007bff!important;}
+
 /*Color Schemes for clild*/
 .gray-child-80 > * {background: #333333!important;}
 .gray-child-60 > * {background: #666666fe!important;}
@@ -151,6 +158,37 @@ tr:nth-child(even) {
       border-bottom-right-radius: 5px;
   }
 /*table styling ENDS*/
+
+.tooltip {
+    cursor: help;
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #1e1e1ed6;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    transition: opacity .6s;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      margin-left: -60px;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+      visibility: visible;
+  }
 
 .unselectable {
     -webkit-touch-callout: none;
@@ -521,6 +559,8 @@ tr:nth-child(even) {
 *
 */
 /*Width STARTS*/
+.width-40{width: 40%!important;}
+.width-50{width: 50%!important;}
 .width-80{width: 80%!important;}
 .width-90{width: 90%!important;}
 .width-100{width: 100%!important;}
@@ -738,6 +778,14 @@ tr:nth-child(even) {
 .p-child-5 > * {padding: 3rem!important;}
 .p-child-6 > * {padding: 6rem!important;}
 
+.px-child-0 > * {padding-left: 0px !important; padding-right: 0px !important;}
+.px-child-1 > * {padding-left: .25rem!important; padding-right: .25rem!important;}
+.px-child-2 > * {padding-left: .5rem!important; padding-right: .5rem!important;}
+.px-child-3 > * {padding-left: 1rem!important; padding-right: 1rem!important;}
+.px-child-4 > * {padding-left: 1.5rem!important; padding-right: 1.5rem!important;}
+.px-child-5 > * {padding-left:  3rem!important; padding-right: 3rem!important;}
+.px-child-6 > * {padding-left:  6rem!important; padding-right: 6rem!important;}
+
 /*media queries for padding*/
 
 /*screen sizes <= 240px*/
@@ -820,10 +868,33 @@ tr:nth-child(even) {
 .f-gray-80{color: #333333!important;}
 .f-gray-60{color: #666666fe!important;}
 .f-white{color: #ffffff!important;}
+
+.color-red{color: #b71e1e!important;}
+.color-blue{color: #b71e1e!important;}
 /*Font color ENDS*/
+
+/*Font styles STARTS*/
+.underline{
+  text-decoration: underline!important;
+}
+.line-through{
+  text-decoration: line-through!important;
+}
+.bold{
+  font-weight: bold!important;
+}
+.bolder{
+  font-weight: bolder!important;
+}
+
+.font-weight-normal{
+  font-weight: normal!important;
+}
+/*Font styles STARTS*/
 
 /*Misc Utilities STARTS*/
 .pointer{cursor: pointer;}
+.link{color: #0073aa;cursor: pointer;}
 /*Misc Utilities ENDS*/
 
 /*Borders STARTS*/

@@ -55,7 +55,7 @@ body{
   padding: 5px;
   top: 0;
   overflow:hidden;
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  box-shadow: 1px 8px 20px 2px rgb(62 62 62 / 12%)!important;
   z-index:100;
   position:sticky !important;
   width:100%;
@@ -268,7 +268,7 @@ body{
 }*/
 
 .add-image-icon{
-  width: 37px;
+  width: 37px!important;
   filter: invert(100%) sepia(92%) saturate(0%) hue-rotate(3deg) brightness(112%) contrast(101%);
 }
 
@@ -309,3 +309,41 @@ body{
   background: white;
 }
 /*Styling the dashboard login ENDS*/
+
+
+/*Styling for dashboard->media module STARTS*/
+.individual_media_content_container, .individual_folder_container{
+  height: 93px;
+  width: 93px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #e4e6ea;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.individual_folder_container{
+  background-image: url(../../images/icons/folder_yellow_icon.svg);
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.individual_media_content_container img{
+  width: 100%;
+}
+
+.folder_name_wrapper{
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  align-items: center;
+  background: #ffffffb3;
+  width: 100%;
+  font-size: 12px;
+}
+/*Styling for dashboard->media module ENDS*/

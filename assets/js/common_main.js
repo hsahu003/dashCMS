@@ -76,13 +76,12 @@ function common_upload_image(i,e){
         },
         onSuccess: function(return_data){
             return_data = JSON.parse(return_data);
-            console.log(return_data.image_path);
-            console.log('processed');
-            
+            console.log(return_data)
             document.getElementsByClassName('add-image-btn-label')[i].style.display = "none";
             document.getElementsByClassName('image-uploded')[i].style.display = "flex";
-            document.getElementsByClassName('image-uploded')[i].getElementsByTagName("img")[0].setAttribute("src", return_data.image);
-            document.getElementsByClassName('ajax_image_return')[i].value = return_data.image_path;
+            document.getElementsByClassName('image-uploded')[i].getElementsByTagName("img")[0].setAttribute("src", site_url(return_data.media_path));
+            document.getElementsByClassName('ajax_image_return')[i].value = return_data.media_path;
+            document.getElementsByClassName('ajax_image_id_return')[i].value = return_data.media_id;
 
             //creates new upload button on uploading image
             if (e.target.parentElement.parentElement.classList.contains('multiple-image-button') == true) {
@@ -379,3 +378,30 @@ window.onload = function(){
         });
     }
 }
+
+
+/*get random positive quote*/
+function get_quote()
+    {   
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 0, 0);
+        var diff = now - start;
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var quote = document.getElementById('positive_quote');
+        var author = document.getElementById('positive_author');
+        var randomNumber = Math.floor(Math.random() * 1500);
+        ajax({
+            url: site_url('assets/json/quotes.json'),
+            type: 'GET',
+            onSuccess: function(return_data){
+                console.log(return_data);
+                var data = JSON.parse(return_data)[1];
+                quote.innerText = '"'+data.text+'"';
+                author.innerText = "—"+data.author;
+            }
+
+        })
+    }
+
+// get_quote();

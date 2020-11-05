@@ -6,7 +6,6 @@ $GLOBALS['site_name'] = 'CI-Template';
 
 //clients contact number for their customer
 $GLOBALS['contact'] = '';
+$GLOBALS['forntend_default_title'] = $GLOBALS['site_name'];
 $GLOBALS['dashboard_default_title'] = $GLOBALS['dashboard_ver'] . " | " . $GLOBALS['site_name'] ;
 $GLOBALS['dashboard_image_folder'] = 'admins';
-
- ?>
